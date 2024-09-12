@@ -71,7 +71,4 @@ int main()
             return 0;
         }
     }
-
-    // std::ifstream file;
-    // file.open("data.txt");
 }
