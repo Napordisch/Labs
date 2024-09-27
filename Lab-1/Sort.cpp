@@ -1,5 +1,4 @@
 #include <iostream>
-#include <Windows.h>
 #include <string>
 #include <vector>
 #include <sstream>
@@ -116,7 +115,6 @@ int main(int argc, char *argv[])
         quickSort(numbers, 0, numbers.size() - 1);
     }
 
-    std::cout << "Result: ";
     for (int number : numbers)
     {
         std::cout << number << ' ';

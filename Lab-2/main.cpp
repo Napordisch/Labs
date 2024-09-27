@@ -1,4 +1,4 @@
-#include <unistd.h> // for usleep
+#include <unistd.h>  // for usleep
 #include <iostream>
 #include <thread>
 
@@ -6,7 +6,7 @@ int counter_1 = 0;
 int counter_2 = 0;
 int counter_3 = 0;
 
-std::thread ts[4];
+std::thread ts[5];
 
 int ms_to_micro_sec(int x) { return (x * 1000); }
 
@@ -41,18 +41,33 @@ void DisplayCounters() {
   }
 }
 
-int main() {
-  ts[1] = std::thread(Count2);
-  ts[2] = std::thread(Count3);
-  ts[3] = std::thread(DisplayCounters);
+void RunFirst() {
   while (true) {
     if (counter_2 >= 100 && counter_3 >= 100) {
       ts[0] = std::thread(Count1);
       break;
     }
   }
+}
+
+int main() {
+  ts[1] = std::thread(Count2);
+  ts[2] = std::thread(Count3);
+  ts[3] = std::thread(DisplayCounters);
+  ts[4] = std::thread(RunFirst);
+  char command;
+
+  while (command != 'q' || command != 'Q') {
+    char command = std::cin.get();
+    if (command == 'q') {
+      return 0;
+      break;
+    }
+  }
+
   ts[1].join();
   ts[2].join();
   ts[3].join();
   ts[0].join();
+  ts[4].join();
 }
