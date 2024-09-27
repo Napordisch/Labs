@@ -36,8 +36,8 @@ void Count3() {
 void DisplayCounters() {
   while (true) {
     usleep(ms_to_micro_sec(500));
-    cout << "Counter 1: " << counter_1 << "; " << "Counter 2: " << counter_2
-         << "; " << "Counter 3: " << counter_3 << '\n';
+    cout << "Counter 1: " << counter_1 << ";\t" << "Counter 2: " << counter_2
+         << ";\t" << "Counter 3: " << counter_3 << '\n';
   }
 }
 
