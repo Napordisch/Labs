@@ -24,7 +24,7 @@ while True:
 
   result = subprocess.run(['./Sort', numbers, sorting_method], \
                           capture_output = True, text = True)
-  print("Result:", result.stdout)
+  print("Результат:", result.stdout)
 
   command = input("q — выйти, любые другие символы — продолжить: ")
   if command == "q":
