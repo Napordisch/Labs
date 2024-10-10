@@ -64,10 +64,4 @@ int main() {
       break;
     }
   }
-
-  ts[1].join();
-  ts[2].join();
-  ts[3].join();
-  ts[0].join();
-  ts[4].join();
 }
